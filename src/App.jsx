@@ -1,4 +1,4 @@
-import { Histogram } from "./components";
+import { Histogram, LineChart } from "./components";
 
 function App() {
   return (
@@ -7,7 +7,8 @@ function App() {
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        <Histogram width={900} height={500} />
+        <Histogram width={900} height={400} />
+        <LineChart width={900} height={400} />
       </div>
     </div>
   );
