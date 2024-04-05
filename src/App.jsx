@@ -1,4 +1,4 @@
-import { Histogram, LineChart } from "./components";
+import { Histogram, LineChart, TimeSeries } from "./components";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       >
         <Histogram width={900} height={400} />
         <LineChart width={900} height={400} />
+        <TimeSeries width={900} height={400} />
       </div>
     </div>
   );

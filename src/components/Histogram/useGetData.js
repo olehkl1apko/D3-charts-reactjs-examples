@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const URL = "https://api.openbrewerydb.org/breweries";
+
 export const useGetData = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -10,9 +12,7 @@ export const useGetData = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          "https://api.openbrewerydb.org/breweries"
-        );
+        const { data } = await axios.get(URL);
         setData(data);
       } catch (error) {
         setError(error);

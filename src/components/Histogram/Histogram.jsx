@@ -9,7 +9,7 @@ const Histogram = ({ width, height }) => {
     if (data?.length > 0) {
       drawChart(data, width, height);
     }
-  }, [data]);
+  }, [data, height, width]);
 
   if (error) {
     return <h4> Getting data is failed. Try again </h4>;
@@ -17,7 +17,7 @@ const Histogram = ({ width, height }) => {
 
   return (
     <div>
-      <h4> Histogram </h4>
+      <h4> Histogram (from dummy api) </h4>
       <div id="histogram" />
     </div>
   );

@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
+import getData from "./getData";
 import drawChart from "./drawChart";
-import generateData from "./generateData";
 
-function LineChart({ width, height }) {
+const TimeSeries = ({ width, height }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     if (data.length > 0) {
       drawChart(data, width, height);
     } else {
-      const data = generateData();
-      setData(data);
+      getData().then((data) => setData(data));
     }
   }, [data, height, width]);
 
   return (
     <div>
-      <h4>Line Chart (from dummy static data)</h4>
-      <div id="container" />
+      <h4>Time Series (from .csv file)</h4>
+      <div id="time_series" />
     </div>
   );
-}
+};
 
-export default LineChart;
+export default TimeSeries;
